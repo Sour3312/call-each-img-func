@@ -55,11 +55,6 @@
 	               design_text_shadow="1"
 />	
 
-<style name="mmi_hotspotstyle" 
-	url="skin/vtourskin_hotspot.png" 
-	/>
-
-	<!--========== All images starts from  here ==========  -->
 	<!-- 1st img -->
 	<scene name="scene_colony" title="colony" onstart="" thumburl="panos/colony.tiles/thumb.jpg" lat="28.36048000" lng="75.59170380" heading="0.0">
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />

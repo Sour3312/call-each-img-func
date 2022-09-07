@@ -3,4 +3,6 @@
 	<cylinder url="img/GSAB0032.JPG"/>
 </image>
     <view hlookat="0" vlookat="5" fov="100" distortion="0"/>
+    <hotspot name="floorspot" devices="mouse" type="text" html="sourabh" css="font-size:50px;text-align:center;" vcenter="true" width="200" height="200" scale="0.2" bgalpha="5" bgroundedge="100" bgborder="2 ##F1C40F 1" bgshadow="0 0 5 0xFFFFFF 1.0" oversampling="2" mipmapping="true" zorder="1" distorted="true" depth="0" depthbuffer="true" torigin="world" rotationorder="xyz" rx="-90" capture="false" handcursor="false" autoalpha="true" floorheight_cm="250" onloaded="place_floorspot_at_mouse_pos();" onclick="tween(view.tx, get(tx)); tween(view.tz, get(tz));"/>
+
 </krpano>
