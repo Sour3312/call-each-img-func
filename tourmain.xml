@@ -1,4 +1,4 @@
-<krpano version="1.20.11" title="Virtual Tour">
+<krpano version="1.20.11" onstart="showlog();" title="Virtual Tour">
 	<include url="skin/vtourskin.xml" />
 	<skin_settings maps="true"
 	               maps_type="google"

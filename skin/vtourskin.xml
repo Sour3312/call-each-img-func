@@ -58,6 +58,24 @@
 	               design_text_css="color:#FFFFFF; font-family:Arial;"
 	               design_text_shadow="1"
 	               />
+				   
+				   <!-- showlog start -->
+				   <settings transparent_angle="90"/>
+    <events name="transparent_active" keep="true" onviewchanged="transparent_active"/>
+    <action name="transparent_active" scope="local">
+      getlooktodistance(current_angle, hotspot[logo].ath, hotspot[logo].atv);
+      clamp(current_angle, 0, get(settings.transparent_angle));
+      set(current_angle_90, calc( current_angle * (90 / settings.transparent_angle) ));
+      set(current_angle_90_rad, calc( current_angle_90 / 180 * Math.PI ));
+      if(current_angle_90 LT 90,
+        Math.sin(transparent_coeff, current_angle_90_rad);
+        ,
+        set(transparent_coeff, 1);
+      );
+      set(hotspot[logo].alpha, get(transparent_coeff));
+      trace(hotspot[logo].alpha);
+    </action>
+					   <!-- showlog end -->
 
 
 	<!-- save the url path of this xml file (the url value will be adjusted during xml parsing) -->
