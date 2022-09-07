@@ -1,0 +1,6 @@
+<krpano version="1.20.11" title="Virtual Tour">
+
+	<image><sphere url="img/GSAB0033.JPG"/></image>
+    <view hlookat="0" vlookat="5" fov="100" distortion="0"/>
+	
+</krpano>

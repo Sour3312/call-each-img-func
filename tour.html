@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- Updated file-->
+<!-- call each image via calling individual button -->
+
+<head>
+    <title>Call desired image by button call </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+        
+        button {
+            padding: 15px;
+            margin: 10px;
+            border: red 2px solid;
+            background-color: green;
+            cursor: pointer;
+        }
+        
+        #pano {
+            padding: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="tour.js">
+    </script>
+    <div id="pano" style="width:90%;height:70%;">
+        <div style="text-align: center;">
+            <button onclick="loadpano(loadXML[0])">01</button>
+            <button onclick="loadpano(loadXML[1])">02</button>
+            <button onclick="loadpano(loadXML[2])">03</button>
+            <button onclick="loadpano(loadXML[3])">04</button>
+            <button onclick="loadpano(loadXML[4])">05</button>
+            <button onclick="loadpano(loadXML[5])">06</button>
+            <button onclick="loadpano(loadXML[6])">07</button>
+            <button onclick="loadpano(loadXML[7])">08</button>
+            <button onclick="loadpano(img9)">09</button>
+            <button onclick="loadpano(img10)">10</button>
+        </div>
+        <script>
+            //call individual image by button call
+            var krpano = null;
+            embedpano({
+                swf: null,
+                id: "krpanoSWFObject",
+                xml: 'tour.xml',
+                localfallback: "none",
+                target: "pano",
+                consolelog: true,
+                passQueryParameters: true,
+                onready: krpano_onready_callback
+            });
+
+            //here passing image code via array
+            var loadXML = ['<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/colony.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>',
+                '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0032.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>',
+                '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0033.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>',
+                '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0034.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>',
+                '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0035.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>',
+                '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0036.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>',
+                '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0037.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>',
+                '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0038.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>',
+                '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0039.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>',
+                '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0040.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>',
+            ];
+            // or,
+
+            //here passing image code via variable
+            var img9 = '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0039.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>'
+
+            var img10 = '<krpano version="1.20.11" title="Virtual Tour"> <image><sphere url="img/GSAB0040.JPG"/></image> <view hlookat="0" vlookat="5" fov="100" distortion="0"/> </krpano>'
+
+
+            function krpano_onready_callback(krpano_interface) {
+                krpano = krpano_interface;
+            }
+
+            function loadpano(args) {
+                if (krpano) {
+                    krpano.call("loadxml(" + args + ", null, MERGE, BLEND(0.1));");
+                }
+            }
+        </script>
+
+
+        <!-- =============================================================2nd way============================================================== -->
+        <!-- <script>
+            //calling each image from individual xml files 
+            embedpano({
+                id: "krpanoSWFObject",
+                xml: "null",
+                target: "pano",
+                consolelog: true,
+                html5: "only",
+                mobilescale: 1.0,
+                onready: krpano_onready_callback,
+                passQueryParameters: true,
+            });
+
+            function krpano_onready_callback(krpano_interface) {
+                krpano = krpano_interface;
+            }
+
+            function loadpano(xmlname) {
+                if (krpano) {
+                    krpano.call("loadpano(" + xmlname + ", null, MERGE, BLEND(0.1));");
+                }
+            }
+        </script>
+        <button onclick="loadpano('tour.xml')">01</button>
+        <button onclick="loadpano('tour1.xml')">02</button>
+        <button onclick="loadpano('tour2.xml')">03</button> -->
+    </div>
+</body>
+
+
+</html>
+
+</html>
